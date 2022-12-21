@@ -4,12 +4,12 @@ FROM python
 ENV PORT 8080
 ENV HOST 0.0.0.0
 
-WORKDIR /code
+WORKDIR /
 # copy the dependencies file to the working directory
 COPY requirements.txt .
 # install dependencies
 RUN pip install -r requirements.txt
 # copy the content of the local src directory to the working directory
-COPY . .
+COPY . /
 # command to run on container start
 CMD [ "app/app.py" ]
